@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Customer Record{% endblock title %}
+
+{% block content %}
+
+<h1 style="text-align: center;">Customer Record</h1>
+<hr>
+<div class="card text-white bg-dark mb-3" style="width: 20rem; margin-left: 40vw;">
+    <div class="card-header">
+        <strong>Name: </strong> {{customer_record.name}}
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Email:</strong> {{customer_record.email}}</li>
+        <li class="list-group-item"><strong>Phone:</strong> {{customer_record.phone}}</li>
+        <li class="list-group-item"><strong>Address: </strong> {{customer_record.address}}</li>
+        <li class="list-group-item"><strong>City: </strong> {{customer_record.city}}</li>
+        <li class="list-group-item"><strong>State: </strong> {{customer_record.state}}</li>
+        <li class="list-group-item"><strong>Zipcode: </strong> {{customer_record.zipcode}}</li>
+        <li class="list-group-item"><strong>Create Date: </strong> {{customer_record.created_at}}</li>
+        <div class="m-1 p-2">
+            <a href="{% url 'home' %}" class="btn btn-sm btn-info ">Back</a>
+            <a href="{% url 'update' customer_record.id %}" class="btn btn-sm btn-success">Update</a>
+            <a href="{% url 'delete' customer_record.id %}" class="btn btn-sm btn-danger">Delete</a>
+        </div>
+    </ul>
+
+</div>
+
+
+{% endblock content %}
